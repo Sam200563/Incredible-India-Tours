@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERE Maps Heatmap</title>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-data.js"></script>
+  <link rel="stylesheet" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css">
+  <style>
+    #mapContainer {
+      width: 100%;
+      height: 500px;
+    }
+    #controls {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <button id="heatmapBtn">Add Heatmap</button>
+  </div>
+  <div id="mapContainer"></div>
+
+  <script>
+    // Initialize the HERE platform
+    const platform = new H.service.Platform({
+      apikey: 'ETSBpLUhFrIleBXFKSmgVDCayx_0330hfuJ4ytGujIA' // Replace with your actual HERE API key
+    });
+
+    // Create default layers
+    const defaultLayers = platform.createDefaultLayers({
+      tileSize: 512,
+      ppi: 320,
+    });
+
+    // Initialize the map
+    const map = new H.Map(
+      document.getElementById('mapContainer'),
+      defaultLayers.vector.normal.map,
+      {
+        center: { lat: 20.5937, lng: 78.9629 }, // Center the map on India
+        zoom: 5,
+      }
+    );
+
+    // Enable map interaction
+    const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+    // Add UI controls
+    const ui = H.ui.UI.createDefault(map, defaultLayers);
+
+    // Function to add the heatmap to the map
+    function addHeatmap() {
+      const dataPoints = [
+        { lat: 19.076, lng: 72.8777, value: 1 }, // Mumbai
+        { lat: 28.7041, lng: 77.1025, value: 0.8 }, // Delhi
+        { lat: 13.0827, lng: 80.2707, value: 0.6 }, // Chennai
+        { lat: 22.5726, lng: 88.3639, value: 0.4 }, // Kolkata
+        { lat: 12.9716, lng: 77.5946, value: 0.9 }, // Bangalore
+      ];
+
+      // Create heatmap provider
+      const heatmapProvider = new H.data.heatmap.Provider({
+        colors: new H.data.heatmap.Colors({
+          '0': 'rgba(0, 0, 255, 0.8)',  // Blue
+          '0.5': 'rgba(255, 255, 0, 0.8)', // Yellow
+          '1': 'rgba(255, 0, 0, 0.8)',   // Red
+        }),
+      });
+
+      // Add data points to the provider
+      dataPoints.forEach((point) => {
+        heatmapProvider.addData([{ lat: point.lat, lng: point.lng, value: point.value }]);
+      });
+
+      // Create heatmap layer and add it to the map
+      const heatmapLayer = new H.map.layer.TileLayer(heatmapProvider);
+      map.addLayer(heatmapLayer);
+
+      alert('Heatmap added to the map.');
+    }
+
+    // Bind the heatmap functionality to the button
+    document.getElementById('heatmapBtn').addEventListener('click', addHeatmap);
+  </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <link rel="stylesheet" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <title>Toggle Traffic with HERE Maps</title>
+    <style>
+        #mapContainer {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HERE Maps with Traffic Layer</h1>
+    <button onclick="toggleTraffic()">Toggle Traffic</button>
+    <div id="mapContainer"></div>
+
+    <script>
+        // Initialize the platform with your API key
+        const platform = new H.service.Platform({
+            apikey: 'ETSBpLUhFrIleBXFKSmgVDCayx_0330hfuJ4ytGujIA' // Replace with your actual HERE API key
+        });
+
+        // Obtain default map layers
+        const defaultLayers = platform.createDefaultLayers();
+
+        // Instantiate the map
+        const map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.vector.normal.map, // Load the normal map
+            {
+                zoom: 12,
+                center: { lat: 28.6139, lng: 77.2090 } // Default center (New Delhi, India)
+            }
+        );
+
+        // Enable UI components
+        const ui = H.ui.UI.createDefault(map, defaultLayers);
+        const mapEvents = new H.mapevents.MapEvents(map);
+        const behavior = new H.mapevents.Behavior(mapEvents);
+
+        // Initialize the traffic layer
+        let trafficLayer = null;
+
+        function toggleTraffic() {
+            if (!trafficLayer) {
+                // Create a traffic flow layer using Traffic API v7
+                trafficLayer = platform.getMapTileService({
+                    type: 'base'
+                }).createTileLayer(
+                    'traffic',
+                    'flow',
+                    256,
+                    'png8'
+                );
+                map.addLayer(trafficLayer);
+                console.log('Traffic Layer Enabled');
+            } else {
+                // Remove the traffic layer if it already exists
+                map.removeLayer(trafficLayer);
+                trafficLayer = null;
+                console.log('Traffic Layer Disabled');
+            }
+        }
+    </script>
+</body>
+</html> -->

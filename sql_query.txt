@@ -1,0 +1,597 @@
+ // $attraction="CREATE TABLE Attraction (
+//     attraction_id INT PRIMARY KEY AUTO_INCREMENT,
+//     attraction_name VARCHAR(255) NOT NULL,
+//     description TEXT,
+//     city_id INT,
+//     type VARCHAR(255),
+//     opening_hours VARCHAR(255),
+//     entry_fee DECIMAL(10, 2),
+//     latitude DECIMAL(9, 6),
+//     longitude DECIMAL(9, 6),
+//     FOREIGN KEY (city_id) REFERENCES City(city_id)
+// )";
+// if($conn->query($attraction)===TRUE){
+//     echo "Attraction Table is created";
+// } else{
+//     echo "Table is not created";
+// }
+
+// $travelpack="CREATE TABLE TravelPackage (
+//     package_id INT PRIMARY KEY AUTO_INCREMENT,
+//     package_name VARCHAR(255) NOT NULL,
+//     description TEXT,
+//     duration INT,
+//     price DECIMAL(10, 2),
+//     city_id INT,
+//     type VARCHAR(255),
+//     FOREIGN KEY (city_id) REFERENCES City(city_id)
+// )";
+// if($conn->query($travelpack)===TRUE){
+//     echo "travelpack Table is created";
+// } else{
+//     echo "Table is not created";
+// }
+
+// $accomo="CREATE TABLE Accommodation (
+//     accommodation_id INT PRIMARY KEY AUTO_INCREMENT,
+//     accommodation_name VARCHAR(255) NOT NULL,
+//     type VARCHAR(255),
+//     address TEXT,
+//     city_id INT,
+//     star_rating INT,
+//     price_range VARCHAR(255),
+//     amenities TEXT,
+//     latitude DECIMAL(9, 6),
+//     longitude DECIMAL(9, 6),
+//     FOREIGN KEY (city_id) REFERENCES City(city_id)
+// )";
+// if($conn->query($accomo)===TRUE){
+//     echo "Accommodation Table is created";
+// } else{
+//     echo "Table is not created";
+// }
+
+
+// $event="CREATE TABLE Event (
+//     event_id INT PRIMARY KEY AUTO_INCREMENT,
+//     event_name VARCHAR(255) NOT NULL,
+//     description TEXT,
+//     event_date DATE,
+//     duration INT,
+//     city_id INT,
+//     type VARCHAR(255),
+//     FOREIGN KEY (city_id) REFERENCES City(city_id)
+// )";
+// if($conn->query($event)===TRUE){
+//     echo "Event Table is created";
+// } else{
+//     echo "Table is not created";
+// }
+
+//NorthIndia City List
+// $state_data="INSERT INTO state (state_name,region_id)VALUES('HimachalPradesh',1),('Uttarakhand',1),('Punjab',1),('Haryana',1),('Rajasthan',1),('UttarPradesh',1),('MadhyaPradesh',1),('Chhattisgarh',1),('Chandigarh',1),('Delhi',1),('JammuandKashmir',1),('Ladakh',1),('AndhraPradesh',2),('Telangana',2),('Kerala',2),('Tamil Nadu',2),('Puducherry',2),('Lakshadweep',2),('Bihar',3),('Jharkhand',3),('Odisha',3),('West Bengal',3),('Andaman and Nicobar Islands',3),('Goa',4),('Gujarat',4),('Maharashtra',4),('Karnataka',4),('Dadra AND Nagar Haveli and Daman and Diu',4)";
+// if($conn->query($state_data)===TRUE){
+//     echo"Data is inserted";
+// }
+
+// $him_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Shimla', 1), 
+// ('Manali', 1), 
+// ('Dharamshala', 1), 
+// ('McLeod Ganj', 1), 
+// ('Kullu', 1), 
+// ('Kasauli', 1), 
+// ('Chamba', 1), 
+// ('Dalhousie', 1), 
+// ('Solan', 1), 
+// ('Palampur', 1), 
+// ('Kufri', 1), 
+// ('Bilaspur', 1), 
+// ('Mandi', 1), 
+// ('Spiti Valley', 1)";
+// if($conn->query($him_city)===TRUE){
+//         echo"Data is inserted";
+// }
+// $uttar_city="INSERT INTO City (city_name, state_id) VALUES
+//     ('Dehradun', 2), 
+//     ('Haridwar', 2), 
+//     ('Rishikesh', 2), 
+//     ('Nainital', 2), 
+//     ('Mussoorie', 2), 
+//     ('Almora', 2), 
+//     ('Ranikhet', 2), 
+//     ('Jim Corbett National Park', 2), 
+//     ('Auli', 2), 
+//     ('Badrinath', 2), 
+//     ('Kedarnath', 2), 
+//     ('Pithoragarh', 2), 
+//     ('Uttarkashi', 2), 
+//     ('Joshimath', 2), 
+//     ('Chamoli', 2)";
+// if($conn->query($uttar_city)===TRUE){
+//     echo"Data is inserted";
+// } 
+
+// $punjab_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Amritsar', 3), 
+// ('Chandigarh', 3), 
+// ('Ludhiana', 3), 
+// ('Jalandhar', 3), 
+// ('Patiala', 3), 
+// ('Bathinda', 3), 
+// ('Mohali', 3), 
+// ('Pathankot', 3), 
+// ('Hoshiarpur', 3), 
+// ('Anandpur Sahib', 3)";
+// if($conn->query($punjab_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $haryana_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Gurgaon', 4), 
+// ('Faridabad', 4), 
+// ('Panipat', 4), 
+// ('Ambala', 4), 
+// ('Rohtak', 4), 
+// ('Hisar',4), 
+// ('Karnal', 4), 
+// ('Kurukshetra', 4), 
+// ('Sonipat', 4), 
+// ('Panchkula', 4)";
+// if($conn->query($haryana_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $rajastan_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Jaipur', 5), 
+// ('Udaipur', 5), 
+// ('Jodhpur', 5), 
+// ('Jaisalmer', 5), 
+// ('Ajmer', 5), 
+// ('Pushkar', 5), 
+// ('Bikaner', 5), 
+// ('Kota', 5), 
+// ('Mount Abu', 5), 
+// ('Chittorgarh', 5)";
+// if($conn->query($rajastan_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $uttarp_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Lucknow', 6), 
+// ('Varanasi', 6), 
+// ('Agra', 6), 
+// ('Kanpur', 6), 
+// ('Allahabad', 6), 
+// ('Noida', 6), 
+// ('Ghaziabad', 6), 
+// ('Mathura', 6), 
+// ('Meerut', 6), 
+// ('Aligarh', 6)";
+// if($conn->query($uttarp_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $chandi_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Chandigarh', 9)";
+// if($conn->query($chandi_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $delhi_city="INSERT INTO City (city_name, state_id) VALUES
+// ('New Delhi', 10), 
+// ('Old Delhi', 10), 
+// ('South Delhi', 10), 
+// ('West Delhi', 10), 
+// ('East Delhi', 10), 
+// ('North Delhi', 10)";
+// if($conn->query($delhi_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $jam_kas_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Srinagar', 11), 
+// ('Jammu', 11), 
+// ('Leh', 11), 
+// ('Gulmarg', 11), 
+// ('Pahalgam', 11), 
+// ('Anantnag', 11), 
+// ('Baramulla', 11), 
+// ('Pulwama', 11)";
+// if($conn->query($jam_kas_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $ladakh_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Leh', 12), 
+// ('Kargil', 12), 
+// ('Nubra Valley', 12), 
+// ('Pangong Lake', 12), 
+// ('Tso Moriri', 12)";
+// if($conn->query($ladakh_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+//SouthIndia City List
+// $andra_city="INSERT INTO city (city_name,state_id) VALUES
+// ('Visakhapatnam',13),
+// ('Vijayawada',13),
+// ('Tirupati',13),
+// ('Guntur',13),
+// ('Nellore',13),
+// ('Kurnool',13),
+// ('Rajahmundary',13),
+// ('Kakinada',13),
+// ('Anantapur',13),
+// ('Eluru',13)";
+// if($conn->query($andra_city)===TRUE){
+//     echo "Data is inserted";
+// }
+// $telan_city="INSERT INTO city (city_name,state_id) VALUES
+// ('Hyderabad',14),
+// ('Warangal',14),
+// ('Karimnagar',14),
+// ('Nizamabad',14),
+// ('Khammam',14),
+// ('Ramagundam',14),
+// ('Mahbubnagar',14),
+// ('Nalgonda',14),
+// ('Adilabad',14),
+// ('Suryapet',14)";
+// if($conn->query($telan_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $kerla_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Thiruvananthapuram', 15), 
+// ('Kochi', 15), 
+// ('Kozhikode', 15), 
+// ('Thrissur', 15), 
+// ('Alappuzha', 15), 
+// ('Palakkad', 15), 
+// ('Kannur', 15), 
+// ('Kollam', 15), 
+// ('Kottayam', 15), 
+// ('Malappuram', 15);
+// ";
+// if($conn->query($kerla_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $tamil_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Chennai', 16), 
+// ('Coimbatore', 16), 
+// ('Madurai', 16), 
+// ('Salem', 16), 
+// ('Tiruchirappalli', 16), 
+// ('Tiruppur', 16), 
+// ('Erode', 16), 
+// ('Vellore', 16), 
+// ('Thoothukudi', 16), 
+// ('Tirunelveli', 16);
+// ";
+// if($conn->query($tamil_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $pusu_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Puducherry', 17), 
+// ('Karaikal', 17), 
+// ('Mahe', 17), 
+// ('Yanam', 17)";
+// if($conn->query($pusu_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $laks_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Kavaratti', 18), 
+// ('Minicoy', 18), 
+// ('Agatti', 18), 
+// ('Amini', 18), 
+// ('Androth', 18), 
+// ('Bangaram', 18), 
+// ('Bitra', 18), 
+// ('Chetlat', 18), 
+// ('Kadmat', 18), 
+// ('Kalpeni', 18)";
+// if($conn->query($laks_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+//eastindia city list
+// $bihar_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Patna', 19), 
+// ('Gaya', 19), 
+// ('Bhagalpur', 19), 
+// ('Muzaffarpur', 19), 
+// ('Purnia', 19), 
+// ('Darbhanga', 19), 
+// ('Bihar Sharif', 19), 
+// ('Ara', 19), 
+// ('Begusarai', 19), 
+// ('Katihar', 19);
+// ";
+// if($conn->query($bihar_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $jharkhand_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Ranchi', 20), 
+// ('Jamshedpur', 20), 
+// ('Dhanbad', 20), 
+// ('Bokaro Steel City', 20), 
+// ('Deoghar', 20), 
+// ('Hazaribagh', 20), 
+// ('Giridih', 20), 
+// ('Ramgarh', 20), 
+// ('Medininagar', 20), 
+// ('Phusro', 20);
+// ";
+// if($conn->query($jharkhand_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $odisha_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Bhubaneswar', 21), 
+// ('Cuttack', 21), 
+// ('Rourkela', 21), 
+// ('Berhampur', 21), 
+// ('Sambalpur', 21), 
+// ('Puri', 21), 
+// ('Balasore', 21), 
+// ('Baripada', 21), 
+// ('Bhadrak', 21), 
+// ('Angul', 21);
+// ";
+// if($conn->query($odisha_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $westbengal_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Kolkata', 22), 
+// ('Howrah', 22), 
+// ('Durgapur', 22), 
+// ('Asansol', 22), 
+// ('Siliguri', 22), 
+// ('Bardhaman', 22), 
+// ('Kharagpur', 22), 
+// ('Malda', 22), 
+// ('Berhampore', 22), 
+// ('Jalpaiguri', 22);
+// ";
+// if($conn->query($westbengal_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $andman_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Port Blair', 23), 
+// ('Diglipur', 23), 
+// ('Mayabunder', 23), 
+// ('Rangat', 23), 
+// ('Car Nicobar', 23), 
+// ('Campbell Bay', 23), 
+// ('Havelock Island', 23), 
+// ('Neil Island', 23), 
+// ('Little Andaman', 23), 
+// ('Great Nicobar', 23);
+// ";
+// if($conn->query($andman_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+//westindia city list
+// $goa_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Panaji', 24), 
+// ('Margao', 24), 
+// ('Vasco da Gama', 24), 
+// ('Mapusa', 24), 
+// ('Ponda', 24), 
+// ('Bicholim', 24), 
+// ('Curchorem', 24), 
+// ('Valpoi', 24), 
+// ('Quepem', 24), 
+// ('Sanguem', 24);
+// ";
+// if($conn->query($goa_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $gujarat_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Ahmedabad', 25), 
+// ('Surat', 25), 
+// ('Vadodara', 25), 
+// ('Rajkot', 25), 
+// ('Bhavnagar', 25), 
+// ('Jamnagar', 25), 
+// ('Gandhinagar', 25), 
+// ('Junagadh', 25), 
+// ('Anand', 25), 
+// ('Navsari', 25);
+// ";
+// if($conn->query($gujarat_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $maharashtra_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Mumbai', 26), 
+// ('Pune', 26), 
+// ('Nagpur', 26), 
+// ('Thane', 26), 
+// ('Nashik', 26), 
+// ('Aurangabad', 26), 
+// ('Solapur', 26), 
+// ('Amravati', 26), 
+// ('Kolhapur', 26), 
+// ('Jalgaon', 26);
+// ";
+// if($conn->query($maharashtra_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $karnataka_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Bengaluru', 27), 
+// ('Mysuru', 27), 
+// ('Hubballi-Dharwad', 27), 
+// ('Mangaluru', 27), 
+// ('Belagavi', 27), 
+// ('Kalaburagi', 27), 
+// ('Davangere', 27), 
+// ('Ballari', 27), 
+// ('Vijayapura', 27), 
+// ('Shivamogga', 27);
+// ";
+// if($conn->query($karnataka_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $dadra_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Silvassa', 28), 
+// ('Daman', 28), 
+// ('Diu', 28), 
+// ('Amli', 28), 
+// ('Kachigam', 28), 
+// ('Varkund', 28), 
+// ('Marwad', 28), 
+// ('Ambawadi', 28), 
+// ('Jampore', 28), 
+// ('Kadaiya', 28);
+// ";
+// if($conn->query($dadra_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+//centralindia city list
+// $mp_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Bhopal', 7), 
+// ('Indore', 7), 
+// ('Gwalior', 7), 
+// ('Jabalpur', 7), 
+// ('Ujjain', 7), 
+// ('Sagar', 7), 
+// ('Satna', 7), 
+// ('Ratlam', 7), 
+// ('Rewa', 7), 
+// ('Katni', 7);
+// ";
+// if($conn->query($mp_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+// $chhattis_city="INSERT INTO City (city_name, state_id) VALUES
+// ('Raipur', 8), 
+// ('Bhilai', 8), 
+// ('Korba', 8), 
+// ('Bilaspur', 8), 
+// ('Durg', 8), 
+// ('Rajnandgaon', 8), 
+// ('Jagdalpur', 8), 
+// ('Raigarh', 8), 
+// ('Ambikapur', 8), 
+// ('Dhamtari', 8);
+// ";
+// if($conn->query($chhattis_city)===TRUE){
+//     echo "Data is inserted";
+// }
+
+
+
+$packages = [
+    //     [
+    //         'name' => 'Mumbai City Explorer',
+    //         'price' => 1200.00,
+    //         'description' => 'Explore the rich cultural heritage of India with our Golden Triangle Tour.',
+    //         'duration' => '3 Days / 2 Nights',
+    //         'destinations' => 'Mumbai',
+    //         'inclusions' => 'Accommodation in a 3-star hotel
+    // Daily breakfast
+    // Guided city tour
+    // Entry tickets to popular attractions
+    // Airport transfers',
+    //         'exclusions' => 'Personal Expenses,Travel Insurance',
+    //         'images' => 'golden_triangle1.jpg,golden_triangle2.jpg,golden_triangle3.jpg',
+    //         'itinerary' => 'Day 1: Arrival in Mumbai, check-in at the hotel, evening at Marine Drive
+    // Day 2: Full-day city tour covering Gateway of India, Elephanta Caves, Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (Prince of Wales Museum), and Colaba Causeway
+    // Day 3: Visit to Siddhivinayak Temple and Haji Ali Dargah, shopping at Crawford Market, departure'
+    //     ],
+
+    //     [
+    //         'name' => 'Mumbai Heritage Tour',
+    //         'price' => 900.00,
+    //         'description' => 'Experience the serene backwaters of Kerala with our special tour package.',
+    //         'duration' => '4 Days / 3 Nights',
+    //         'destinations' => 'Mumbai',
+    //         'inclusions' => 'Accommodation in a 4-star heritage hotel
+    // Daily breakfast and one dinner
+    // Guided heritage tour
+    // Entry tickets to museums and historical sites
+    // Airport transfers',
+    //         'exclusions' => 'Personal Expenses,Travel Insurance',
+    //         'images' => 'kerala_backwaters1.jpg,kerala_backwaters2.jpg',
+    //         'itinerary' => 'Day 1: Arrival in Mumbai, check-in at the hotel, visit to Chhatrapati Shivaji Terminus and Flora Fountain
+    // Day 2: Heritage walk covering Mumbai Fort, Bombay High Court, and Rajabai Clock Tower, evening at Gateway of India
+    // Day 3: Visit to Mani Bhavan Gandhi Museum, Dr. Bhau Daji Lad Museum, and Banganga Tank
+    // Day 4: Morning visit to Mahalaxmi Temple, shopping at Zaveri Bazaar, departure'
+    //     ],
+
+//     [
+//         'name' => 'Mumbai Bollywood Experience',
+//         'price' => 900.00,
+//         'description' => 'Experience the serene backwaters of Kerala with our special tour package.',
+//         'duration' => '5 Days / 4 Nights',
+//         'destinations' => 'Mumbai',
+//         'inclusions' => 'Accommodation in a 5-star hotel
+// Daily breakfast and dinner
+// Bollywood studio tour
+// Meet and greet with a Bollywood personality
+// Airport transfers',
+//         'exclusions' => 'Personal Expenses,Travel Insurance',
+//         'images' => 'kerala_backwaters1.jpg,kerala_backwaters2.jpg',
+//         'itinerary' => 'Day 1: Arrival in Mumbai, check-in at the hotel, evening at Juhu Beach
+// Day 2: Full-day Bollywood studio tour, visit to a live shooting set
+// Day 3: Visit to Film City, meet and greet with a Bollywood personality
+// Day 4: Explore Bandra Bandstand, visit Mount Mary Church and Carter Road
+// Day 5: Shopping at Linking Road, departure'
+//     ],
+//     [
+//         'name' => 'Mumbai Cultural Extravaganza',
+//         'price' => 900.00,
+//         'description' => 'Experience the serene backwaters of Kerala with our special tour package.',
+//         'duration' => '6 Days / 5 Nights',
+//         'destinations' => 'Mumbai',
+//         'inclusions' => 'Accommodation in a boutique hotel
+// Daily breakfast and one local lunch
+// Cultural tour
+// Entry tickets to cultural performances
+// Airport transfers',
+//         'exclusions' => 'Personal Expenses,Travel Insurance',
+//         'images' => 'kerala_backwaters1.jpg,kerala_backwaters2.jpg',
+//         'itinerary' => 'Day 1: Arrival in Mumbai, check-in at the hotel, visit to Kala Ghoda Art Precinct
+// Day 2: Explore Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, Jehangir Art Gallery, and National Gallery of Modern Art
+// Day 3: Visit to Elephanta Caves, evening cultural performance at Prithvi Theatre
+// Day 4: Day trip to Kanheri Caves and Sanjay Gandhi National Park
+// Day 5: Explore Dharavi Art Project, visit to Worli Village and Haji Ali Dargah
+// Day 6: Morning at Chor Bazaar, departure'
+//     ]
+
+
+
+NEW PACKAGES
+[
+//     'name' => 'Mumbai Bollywood Experience',
+//     'price' => 900.00,
+//     'description' => 'Experience the serene backwaters of Kerala with our special tour package.',
+//     'duration' => '5 Days / 4 Nights',
+//     'destinations' => 'Mumbai',
+//     'inclusions' => 'Accommodation in a 5-star hotel,
+// Daily breakfast and dinner,
+// Bollywood studio tour,
+// Meet and greet with a Bollywood personality,
+// Airport transfers',
+//     'exclusions' => 'Personal Expenses,Travel Insurance',
+//     'images' => 'pack_juhu.jpg,pack_novote1.jpg,pack_novotel.jpg,Bandstand.jpg,pack_bandstand.jpeg',
+//     'itinerary' => 'Day 1: Arrival in Mumbai, check-in at the hotel, evening at Juhu Beach.
+// Day 2: Full-day Bollywood studio tour, visit to a live shooting set.
+// Day 3: Visit to Film City, meet and greet with a Bollywood personality.
+// Day 4: Explore Bandra Bandstand, visit Mount Mary Church and Carter Road.
+// Day 5: Shopping at Linking Road, departure'
+// ],

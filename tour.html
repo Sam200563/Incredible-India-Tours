@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Travel and Tourism</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+      .logo{
+  height:50px !important;
+  border-radius: 5px;
+}
+.logo img{
+  height:50px !important;
+  border-radius: 50%;
+  cursor: pointer;
+}
+    .navbar-scrolled {
+      background-color: white !important;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar-scrolled .nav-link,
+    .navbar-scrolled .navbar-text {
+      color: black !important;
+    }
+
+    .where {
+      background-color: #040E27;
+      padding: 50px 0;
+      margin-top: 100px;
+    }
+
+    .where h3 {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 400;
+      font-family: "Rubik", sans-serif;
+    }
+
+    @media(width=1440px) {
+      .where {
+        margin-top: 60px;
+      }
+    }
+
+    @media(width=1024px) {
+      .where {
+        margin-top: 50px;
+      }
+    }
+
+    @media(width:768px) {
+      .where {
+        margin-top: 0px;
+
+      }
+
+      .container {
+        bottom: 30px;
+        position: relative;
+      }
+    }
+
+    @media(width<600px) {
+      .where {
+        margin-top: 0 !important;
+      }
+
+      .container {
+        bottom: 30px;
+        position: relative;
+      }
+    }
+
+    #where h3 {
+      color: white;
+      font-size: 35px;
+      font-weight: 400;
+    }
+
+    .search_form {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .input-field input {
+      width: 100%;
+      height: 50px;
+      background: transparent;
+      border: 1px solid #363e52;
+      padding-left: 15px;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .places {
+      padding-top: 50px;
+    }
+
+    .place_item {
+      box-shadow: 0px 20px 30px rgba(29, 42, 59, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .place_item_text {
+      position: relative;
+      padding: 22px 35px 20px 25px;
+    }
+
+    .place_item_text h4 {
+      margin-bottom: 8px;
+    }
+
+    .place_item_text p {
+      font-size: 13px;
+      margin-bottom: 0;
+      font-weight: 400;
+      line-height: 25px;
+      margin: 0 0 15px 0;
+    }
+
+    @media(width=1024px) {
+      .place_item_pic img {
+        width: 215px;
+      }
+    }
+
+    @media(width<600px) {
+      section {
+        width: 700px;
+      }
+
+      section .container {
+        width: 500px;
+      }
+
+      .place_item_pic img {
+        width: 475px;
+      }
+    }
+
+    .sidebar {
+      border: 1px solid rgba(112, 112, 112, 0.1);
+      padding: 50px 40px 45px;
+      background: #ffffff;
+    }
+
+    .sidebar .filter_item {
+      position: relative;
+      margin: 30px;
+    }
+
+    .sidebar .filter_item .filter_item_input {
+      position: relative;
+    }
+
+    .sidebar .filter_item .filter_item_input input {
+      width: 100%;
+      height: 38px;
+      border-bottom: 1px solid rgba(29, 42, 59, 0.1) !important;
+      border: none;
+      font-size: 15px;
+      color: #1d2a3b;
+    }
+
+    .sidebar button {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: capitalize;
+      border: none;
+      width: 100%;
+    }
+
+    .carousel-container {
+      display: flex !important;
+      align-items: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      /* Ensure the carousel takes full width */
+      margin: auto !important;
+      overflow: hidden !important;
+      /* Hide overflow to ensure a clean view */
+      position: relative !important;
+    }
+
+    .carousel {
+      display: flex !important;
+      overflow-x: hidden !important;
+      scroll-behavior: smooth !important;
+      flex-grow: 1 !important;
+      white-space: nowrap !important;
+      
+    }
+
+    .carouselinner {
+      display: inline-flex !important;
+    }
+
+    .carouselitem {
+      border: 1px solid #ccc;
+      display: inline-block !important;
+      flex: 0 0 auto !important;
+      width: calc(100% / 3) !important;
+      /* Change this based on how many items you want visible */
+      box-sizing: border-box !important;
+      margin-left: 2px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 10px !important;
+      border-radius: 10px;
+      width:504px !important;
+    }
+
+    img {
+      width: 100% !important;
+      display: block !important;
+    } 
+
+    .carouselitem .img img{
+      width:456px;
+      height:304px;
+    }
+
+    .control {
+      font-size: 50px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .control-prev {
+      position: absolute;
+      left: 0;
+    }
+
+    .control-next {
+      position: absolute;
+      right: 0;
+    }
+
+    .book_package {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .book_package a {
+      text-decoration: none;
+      background-color: green;
+      border-radius: 5px;
+      padding: 10px;
+      color: #fff;
+    }
+
+    #package {
+      text-decoration: none;
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+
+    #package a {
+      text-decoration: none;
+      background-color: crimson;
+      border-radius: 5px;
+      padding: 10px;
+      color: #fff;
+    }
+
+    #package a:hover {
+      background-color: #b70c3f;
+      color: #fff;
+    }
+
+    #blog {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #blog_detail {
+      box-shadow: 10px 10px 5px #aaaaaa;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="hotel position-relative">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
+        <div class="container-fluid">
+          <div class="logo">
+            <img src="images/INCRIDEBLE INDIA TOURS.jpg" alt="">
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsenav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end h5 text-light" id="collapsenav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="home.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="about.html">About us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Places</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="tour.html">Destinations</a></li>
+                  <li><a class="dropdown-item" href="package.php">Packages</a></li>
+                  <li><a class="dropdown-item" href="blog.html">Blogs</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="hotel.html">Hotels</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="flight.html">Flight</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="register.php"><i class="fa-solid fa-circle-user fa-lg"></i>Create
+                    Account</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Image -->
+      <img src="images/Sri-Renuka-ji-Lake-Sirmaur.jpg" alt="" class="img-fluid" style="height: 650px !important;" />
+      <div class="card-img-overlay text-center" id="overlay">
+        <h1 class="card-title text-light" id="hotel-text">Destinations</h1>
+        <div class="where">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-3">
+                <div class="form-area">
+                  <h3>Where you want to go?</h3>
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <div>
+                  <form action="#" class="search_form">
+                    <div class="input-field">
+                      <input type="text" placeholder="Where to go?">
+                    </div>
+                    <div class="input-field" style="margin-left: 5px;">
+                      <input type="text" id="date" placeholder="Check-in Date" onfocus="(this.type='date')"
+                        onblur="(this.type='text')" required />
+                    </div>
+                    <div class="input-field" style="margin-left: 5px;">
+                      <input type="text" placeholder="train,flight">
+                    </div>
+                    <div class="search_btn w-25" style="margin-left: 5px;">
+                      <button class="btn btn-danger w-100" type="submit">Search</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="places">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place1.jpg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place2.jpg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place3.jpg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place4.jpeg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place5.jpg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place6.jpg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place7.jpg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place8.jpg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="place_item">
+                <div class="place_item_pic">
+                  <img src="images/Places/place9.jpg" alt="" width="306px">
+                </div>
+                <div class="place_item_text">
+                  <h4>Kalimpong is an east Indian hill town in the Himalayan foothills of West Bengal.</h4>
+                  <p>Location</p>
+                  <div>1000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div>
+            <form action="#" class="sidebar">
+              <div class="filter_item">
+                <h5>Where</h5>
+                <div class="filter_item_input">
+                  <input type="text" name="" id="" placeholder="Mumbai,gujrat">
+                </div>
+              </div>
+              <div class="filter_item">
+                <h5>Date</h5>
+                <div class="filter_item_input">
+                  <input type="date" name="" id="date">
+                </div>
+              </div>
+              <div class="filter_item">
+                <h5>guests</h5>
+                <div class="filter_item_input">
+                  <input type="number" name="" id="" placeholder="1">
+                </div>
+              </div>
+              <button class="btn btn-danger" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div class="carousel-container">
+      <span class="control control-prev"><i class="fa-solid fa-angle-left" style="color: #ffffff;"></i></span>
+      <div class="carousel">
+        <div class="carouselinner">
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/pl.png" alt="">
+            </div>
+            <div class="d">
+              <h2>Gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div class="mx-auto">
+                <ul style="list-style-type:none;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package.php">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place1.jpg" alt="">
+            </div>
+            <div>
+              <h2>Kalimpong</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place2.jpg" alt="">
+            </div>
+            <div>
+              <h2>Gateway Of India</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place3.jpg" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place4.jpeg" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place5.jpg" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place6.jpg" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place7.jpg" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place8.jpg" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/place9.jpg" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/pl.png" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+          <div class="carouselitem">
+            <div class="img">
+              <img src="images/Places/pl.png" alt="">
+            </div>
+            <div>
+              <h2>gujarat</h2>
+              <h4>3 Days Package</h4>
+              <div>
+                <ul style="list-style-type: circle;">
+                  <li>Hotel</li>
+                  <li>Guide</li>
+                  <li>With or without Transport</li>
+                </ul>
+              </div>
+              <div class="book_package">
+                <a href="package_detail">Book Package</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="control control-next"><i class="fa-solid fa-angle-right" style="color: #ffffff;"></i></span>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center" id="package">
+        <a href="packages.html">More Packages</a>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <article>
+    <div class="container">
+      <div>
+        <h2>Recent Blogs</h2>
+      </div>
+      <div class="row" id="blog">
+        <div class="col-lg-3 col-md-2 col-sm-2">
+          <div class="card" id="blog_detail">
+            <img src="images/Places/pl.png" alt="" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title h3">Gujarat</h3>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-2">
+          <div class="card" id="blog_detail">
+            <img src="images/Places/pl.png" alt="" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title h3">Gujarat</h3>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-2">
+          <div class="card" id="blog_detail">
+            <img src="images/Places/pl.png" alt="" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title h3">Gujarat</h3>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-2">
+          <div class="card" id="blog_detail">
+            <img src="images/Places/pl.png" alt="" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title h3">Gujarat</h3>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center" id="package">
+          <a href="blog.html">See More Blogs</a>
+        </div>
+      </div>
+    </div>
+  </article>
+  <section class="mh-100 newsletter border-top">
+    <br>
+    <div class="container w-75 mb-5" id="newsletter">
+      <h1 class="h1">Subscribe Now</h1>
+      <p class="m-5 pb-4">Subscribe for our travel newsletter to receive exclusive deals, destination inspiration, and
+        helpful tips for your next vacation. Stay informed and get the most out of your travels by subscribing to our
+        email list today.</p>
+      <form action="#" id="subscribe-form" class="w-100">
+        <div class="form-group text-center d-flex gap-2">
+          <input type="email" class="form-control w-100 border border-dark" id="email" placeholder="Enter your email">
+          <button type="submit" class="btn btn-dark" id="btn">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-md-6 col-lg-4">
+            <div class="footer-widget">
+              <div class="footer-name text-white">Travel&Tourism</div>
+              <p class="text-white">198 west 21th street xyz road ,
+                <br>
+                mumbai 400001
+                <br><br>
+                <a href="#" style="text-decoration: none;" class="text-white"><i
+                    class="fa-solid fa-phone"></i>+911144558844</a>
+                <br><br>
+                <a href="#" style="text-decoration: none;" class="text-white"><i
+                    class="fa-solid fa-envelope"></i>travelandtourism@gmail.com</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-lg-3">
+            <div class="footer-widget">
+              <h3 class="text-white">Quick Access</h3>
+              <ul class="navbar-nav">
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light">Home</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light">About</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light">Services</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-lg-3">
+            <div class="footer-widget">
+              <h3 class="text-white">Company</h3>
+              <ul class="navbar-nav">
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light">Blog</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light">Pricing</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light">contact</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-6 col-lg-2">
+            <div class="footer-widget">
+              <h3 class="text-white">Follow Us</h3>
+              <ul class="navbar-nav">
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html" class="nav-link text-light"><i
+                      class="fa-brands fa-twitter" style="color: #ffffff;"></i>Twitter</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html" class="nav-link text-light"><i
+                      class="fa-brands fa-facebook" style="color: #ffffff;"></i>Facebook</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html" class="nav-link text-light"><i
+                      class="fa-brands fa-instagram" style="color: #ffffff;"></i>Instagram</a></li>
+                <li class="nav-item mt-2" style="font-size: larger;"><a href="home.html"
+                    class="nav-link text-light"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copy-right-text">
+      <div class="container">
+        <div class="footer-border"></div>
+        <div class="row">
+          <div class="col-xl-12">
+            <p class="copy-text text-center">
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#top" class="to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    //Navbar
+    $(window).on('scroll', function () {
+      if ($(window).scrollTop() > 200) {
+        $('.navbar').addClass('navbar-scrolled');
+      } else {
+        $('.navbar').removeClass('navbar-scrolled');
+      }
+    });
+
+    //valid date selection
+    // const today = new Date().toISOString().split('T')[0];
+    // document.getElementById('date').setAttribute('min', today);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get today's date in YYYY-MM-DD format
+      const today = new Date().toISOString().split('T')[0];
+      console.log("Today's date:", today); // For debugging
+
+      // Find the date input element
+      const dateInput = document.getElementById('date');
+      if (dateInput) {
+        // Set the minimum date attribute to today's date
+        dateInput.setAttribute('min', today);
+        console.log("Min date set to:", dateInput.getAttribute('min')); // For debugging
+      } else {
+        console.error("Date input element not found");
+      }
+    });
+
+    //carousel function
+    const carousel = document.querySelector('.carousel');
+    const prevButton = document.querySelector('.control-prev');
+    const nextButton = document.querySelector('.control-next');
+
+    prevButton.addEventListener('click', () => {
+      carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+    });
+
+    nextButton.addEventListener('click', () => {
+      carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+    });
+
+    //Back to top
+    const toTop = document.querySelector(".to-top");
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 100) {
+        toTop.classList.add("active");
+      } else {
+        toTop.classList.remove("active");
+      }
+    })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

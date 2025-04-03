@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.hotel {
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-scrolled {
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-text {
+    color: black !important;
+}
+
+.navbar {
+    z-index: 1;
+    /* Ensure navbar appears above the image */
+    color: #fff;
+}
+
+.navbar-text {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
+    left: 20px;
+    position: relative;
+}
+
+.nav-item {
+    padding-right: 30px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.nav-item .nav-link:hover {
+    color: skyblue !important;
+    cursor: pointer !important;
+}
+
+.logo {
+    height: 50px !important;
+    border-radius: 5px;
+}
+
+.logo img {
+    height: 50px !important;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#overlay {
+    top: 300px;
+    height: 72px;
+}
+
+#hotel-text {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 6rem;
+}
+
+#hotel-text:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.footer {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #040E27;
+    position: relative;
+    margin-top: 50px;
+    z-index: 0;
+    top: 600px;
+}
+
+.footer-top {
+    padding-top: 115px;
+    padding-bottom: 115px;
+}
+
+.copy-right-text {
+    padding-bottom: 26px;
+}
+
+.footer-border {
+    padding-bottom: 26px;
+    border-top: 1px solid #363E52;
+}
+
+.copy-text {
+    font-size: 14px;
+    color: #7a838b;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.footer-name {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.to-top {
+    border: 2px solid white;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+#book,
+    #wishlist,
+    #blogs {
+      text-decoration: none;
+    }
+
+    #logout {
+      margin: 5px;
+      background-color: lightgrey;
+      padding: 8px;
+      border-radius: 5px;
+      bottom: 10px;
+      left: 0;
+      position: absolute;
+      text-decoration: none;
+      color: black;
+      font-size: larger;
+      font-weight: 500;
+    }
+
+    .profile-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .offcanvas-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .initials {
+      font-size: 24px;
+    }
+
+    .profile-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    h5.offcanvas-title {
+      font-size: 20px;
+    }
+
+    p.text-muted {
+      font-size: 14px;
+    }
+    
